@@ -21,7 +21,7 @@ class Tool extends CI_Controller {
         $a_lat = $this->input->post('a_lat');
         $b_lon = $this->input->post('b_lon');
         $b_lat = $this->input->post('b_lat');
-        exec("./a.out 120 30 110 30", $ret);
+        exec("./a.out $a_lat $a_lon $b_lat $b_lon", $ret);
         $len_km = $ret[0];
         $angle = $ret[1];
         echo json_encode(['code'=>0, 'msg'=>'',
